@@ -1,32 +1,15 @@
 def analyze_grades(grades: list[int]) -> dict:
-    """
-    Analyzes a list of integer grades and returns a dictionary with key statistics:
-    - average (rounded to 2 decimal places)
-    - highest grade
-    - lowest grade
-    - count of passing students (grade >= 40)
-    """
+    
     if not grades:
         return {
-            'average': 0.0,
-            'highest': 0,
-            'lowest': 0,
-            'passing_count': 0
-        }
+            'average': 0.0, }
     
     total = sum(grades)
     count = len(grades)
     average = round(total / count, 2)
-    highest = max(grades)
-    lowest = min(grades)
-    passing_count = sum(1 for grade in grades if grade >= 40)
     
     return {
-        'average': average,
-        'highest': highest,
-        'lowest': lowest,
-        'passing_count': passing_count
-    }
+        'average': average, }
 
 def generate_report(data: dict[str, list[int]]) -> None:
     """
@@ -54,5 +37,4 @@ if __name__ == '__main__':
         'Diana': [50, 60, 50]
     }
     
-    # Generate and print the report
     generate_report(student_data)
